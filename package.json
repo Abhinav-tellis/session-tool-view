@@ -1,26 +1,41 @@
 {
-  "name": "session-tool",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "init-data": "npx tsx initData.ts"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "devDependencies": {
-    "tsx": "^4.20.4",
-    "typescript": "^5.9.2"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "init-data": "tsx scripts/initializeData.ts",
+    "test-connection": "tsx scripts/testConnection.ts",
+    "debug-vector": "tsx scripts/debugVectorStore.ts",
+    "check-data": "tsx scripts/checkRawData.ts",
+    "test-fallback": "tsx scripts/testFallback.ts",
+    "test-gemini": "tsx scripts/testGemini.ts"
   },
   "dependencies": {
-    "@langchain/core": "^0.3.69",
+    "@google/generative-ai": "^0.24.1",
+    "@langchain/core": "^0.3.70",
     "@langchain/mongodb": "^0.1.0",
     "dotenv": "^17.2.1",
     "langchain": "^0.3.30",
-    "mongoose": "^8.17.1",
-    "node-fetch": "^3.3.2"
+    "mongodb": "^6.18.0",
+    "next": "15.4.6",
+    "node-fetch": "^3.3.2",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.6",
+    "tailwindcss": "^4",
+    "tsx": "^4.20.4",
+    "typescript": "^5"
   }
 }

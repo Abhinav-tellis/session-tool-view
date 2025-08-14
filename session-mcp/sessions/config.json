@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "autoStartSessions": true,
+  "sessionTimeout": 30,
+  "maxInteractionsPerSession": 100,
+  "keywordTriggers": [
+    "code",
+    "debug",
+    "error",
+    "function",
+    "class",
+    "bug",
+    "fix",
+    "implement"
+  ]
+}

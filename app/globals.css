@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+:root {
+  /* Modern Color Palette */
+  --background: #fafafa;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --foreground: #0a0a0a;
+  --foreground-muted: #6b7280;
+  --border: #e5e7eb;
+  --border-muted: #f3f4f6;
+  
+  /* Brand Colors */
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #475569;
+  --accent: #f8fafc;
+  --accent-foreground: #334155;
+  
+  /* Status Colors */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #06b6d4;
+  
+  /* Chat Specific */
+  --user-message: #3b82f6;
+  --user-message-text: #ffffff;
+  --bot-message: #ffffff;
+  --bot-message-text: #1f2937;
+  --system-message: #f3f4f6;
+  --system-message-text: #6b7280;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  
+  /* Typography */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --surface: #171717;
+    --surface-elevated: #262626;
+    --foreground: #fafafa;
+    --foreground-muted: #a1a1aa;
+    --border: #404040;
+    --border-muted: #262626;
+    
+    --primary: #60a5fa;
+    --secondary: #1e293b;
+    --secondary-foreground: #cbd5e1;
+    --accent: #1e1e1e;
+    --accent-foreground: #e2e8f0;
+    
+    --user-message: #3b82f6;
+    --user-message-text: #ffffff;
+    --bot-message: #262626;
+    --bot-message-text: #f3f4f6;
+    --system-message: #1e1e1e;
+    --system-message-text: #a1a1aa;
+  }
+}
+
+/* Base Styles */
+* {
+  border-color: var(--border);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: var(--radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground-muted);
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, var(--surface) 0px, var(--border-muted) 40px, var(--surface) 80px);
+  background-size: 200px;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Chat Message Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-enter {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Focus States */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500;
+}
+
+/* Utilities */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-effect {
+  background: rgba(23, 23, 23, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
