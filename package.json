@@ -1,0 +1,26 @@
+{
+  "name": "session-tool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "init-data": "npx tsx initData.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "tsx": "^4.20.4",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.69",
+    "@langchain/mongodb": "^0.1.0",
+    "dotenv": "^17.2.1",
+    "langchain": "^0.3.30",
+    "mongoose": "^8.17.1",
+    "node-fetch": "^3.3.2"
+  }
+}
