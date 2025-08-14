@@ -4,5 +4,4 @@ dist
 .claude*
 embeddings.json
 package-lock.json
-frontend/package-loc.json
 session-mcp/sessions
