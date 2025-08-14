@@ -6,22 +6,36 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "init-data": "tsx scripts/initializeData.ts",
+    "test-connection": "tsx scripts/testConnection.ts",
+    "debug-vector": "tsx scripts/debugVectorStore.ts",
+    "check-data": "tsx scripts/checkRawData.ts",
+    "test-fallback": "tsx scripts/testFallback.ts",
+    "test-gemini": "tsx scripts/testGemini.ts"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@langchain/core": "^0.3.70",
+    "@langchain/mongodb": "^0.1.0",
+    "dotenv": "^17.2.1",
+    "langchain": "^0.3.30",
+    "mongodb": "^6.18.0",
+    "next": "15.4.6",
+    "node-fetch": "^3.3.2",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.4.6"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.4.6",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4",
+    "tsx": "^4.20.4",
+    "typescript": "^5"
   }
 }
